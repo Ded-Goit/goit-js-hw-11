@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"index.js","sources":["../src/main.js"],"sourcesContent":["setTimeout(() => console.log(1), 0);\n\nconsole.log(2);\n\nnew Promise(res => {\n  console.log(3);\n  res();\n}).then(() => console.log(4));\n\nconsole.log(5);\n"],"names":["res"],"mappings":"ssBAAA,WAAW,IAAM,QAAQ,IAAI,CAAC,EAAG,CAAC,EAElC,QAAQ,IAAI,CAAC,EAEb,IAAI,QAAQA,GAAO,CACjB,QAAQ,IAAI,CAAC,EACbA,EAAK,CACP,CAAC,EAAE,KAAK,IAAM,QAAQ,IAAI,CAAC,CAAC,EAE5B,QAAQ,IAAI,CAAC"}
