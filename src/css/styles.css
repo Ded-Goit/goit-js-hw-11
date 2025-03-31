@@ -17,7 +17,7 @@
 @import url('./back-link.css');
 @import url('./footer.css');
 body {
-  background-color: #000;
+  background-color: rgb(200, 200, 200);
 }
 .gallery {
   background-image: url(../img/screen-1315650_1920.png);
@@ -35,7 +35,8 @@ body {
   padding: 8px 16px;
   margin: 0 auto;
   border-radius: 4px;
-  box-shadow: inset #fff3 8px 8px 18px 5px, inset #00000080 -8px -8px 18px 5px;
+  box-shadow: inset #fff3 8px 8px 18px 5px,
+    inset hsla(0, 0%, 0%, 0.502) -8px -8px 18px 5px;
 }
 .form input {
   font-family: 'Montserrat', sans-serif;
@@ -43,18 +44,19 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: #808080;
+  color: rgb(128, 128, 128);
   width: 272px;
   height: 36px;
   border-radius: 4px;
   border: 1px solid #808080;
+  padding-left: 8px;
 }
 .form input:hover {
-  border-color: #000;
+  border: 1px solid #000;
 }
 .form input:active {
   color: #2e2f42;
-  border-color: #4e75ff;
+  border: 1px solid #4e75ff;
 }
 .form button {
   font-family: 'Montserrat', sans-serif;
