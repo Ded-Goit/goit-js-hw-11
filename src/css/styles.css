@@ -19,14 +19,14 @@
 body {
   background-color: rgb(200, 200, 200);
 }
-.gallery {
+/*.gallery {
   background-image: url(../img/screen-1315650_1920.png);
   background-repeat: no-repeat;
   background-color: aqua;
   background-size: cover;
   max-width: 100%;
   max-height: 100%;
-}
+}*/
 .form {
   display: flex;
   gap: 8px;
@@ -38,7 +38,7 @@ body {
   box-shadow: inset #fff3 8px 8px 18px 5px,
     inset hsla(0, 0%, 0%, 0.502) -8px -8px 18px 5px;
 }
-.form input {
+input {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -51,12 +51,12 @@ body {
   border: 1px solid #808080;
   padding-left: 8px;
 }
-.form input:hover {
-  border: 1px solid #000;
+input:hover {
+  border-color: #000;
 }
-.form input:active {
+input:active {
   color: #2e2f42;
-  border: 1px solid #4e75ff;
+  border-color: #4e75ff;
 }
 .form button {
   font-family: 'Montserrat', sans-serif;
