@@ -18,17 +18,30 @@
 @import url('./footer.css');
 body {
   background-color: rgb(200, 200, 200);
+  background: linear-gradient(
+    -45deg,
+    rgb(128, 128, 128),
+    rgb(231, 231, 231),
+    rgb(78, 117, 255),
+    rgb(108, 140, 255)
+  );
+  background-size: 400% 400%;
+  background-attachment: fixed;
+  animation: lgradient 13s ease infinite;
 }
-/*.gallery {
-  background-image: url(../img/screen-1315650_1920.png);
-  background-repeat: no-repeat;
-  background-color: aqua;
-  background-size: cover;
-  max-width: 100%;
-  max-height: 100%;
-}*/
+@keyframes lgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .nav-logo:hover {
-  background-color: #6c8cff;
+  background-color: rgb(108, 140, 255);
   border-radius: 8px;
   box-shadow: inset #fff3 8px 8px 18px 5px,
     inset hsla(0, 0%, 0%, 0.502) -8px -8px 18px 5px;
@@ -74,7 +87,7 @@ input:active {
   border-radius: 8px;
   width: 75px;
   height: 40px;
-  background: #4e75ff;
+  background: rgb(78, 117, 255);
   box-shadow: inset #fff3 8px 8px 18px 5px,
     inset hsla(0, 0%, 0%, 0.502) -8px -8px 18px 5px;
 }
@@ -177,4 +190,7 @@ input:active {
 }
 .badges-link {
   box-shadow: inset #fff3 8px 8px 18px 5px, inset #00000080 -8px -8px 18px 5px;
+}
+.iziToast-wrapper {
+  top: 0;
 }
