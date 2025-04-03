@@ -25,7 +25,7 @@ form.addEventListener('submit', async event => {
   showLoader();
 
   try {
-    const images = await fetchImages(query);
+    const images = await getImagesByQuery(query);
 
     if (images.length === 0) {
       iziToast.warning({
@@ -33,7 +33,7 @@ form.addEventListener('submit', async event => {
           'Sorry, there are no images matching your search query. Please try again!',
       });
     } else {
-      renderGallery(images);
+      createGallery(images);
       lightbox.refresh();
     }
   } catch (error) {
@@ -45,7 +45,7 @@ form.addEventListener('submit', async event => {
   }
 });
 
-async function fetchImages(query) {
+async function getImagesByQuery(query) {
   const API_KEY = '49617866-877f488ac6d2fa69158bf0643';
   const BASE_URL = 'https://pixabay.com/api/';
 
@@ -61,7 +61,7 @@ async function fetchImages(query) {
   return response.data.hits;
 }
 
-function renderGallery(images) {
+function createGallery(images) {
   const markup = images
     .map(
       ({
@@ -75,7 +75,7 @@ function renderGallery(images) {
       }) => `
     <li class="gallery-item">
       <a href="${largeImageURL}">
-        <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+        <img src="${webformatURL}" alt="${tags}" />
       </a>
       <div class="info">
         <p><b>Likes:</b> ${likes}</p>
@@ -95,9 +95,11 @@ function clearGallery() {
 }
 
 function showLoader() {
+  console.log('🟡 Лоадер Показано');
   document.querySelector('.loader').classList.remove('hidden');
 }
 
 function hideLoader() {
+  console.log('✅ Лоадер Приховано');
   document.querySelector('.loader').classList.add('hidden');
 }
