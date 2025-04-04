@@ -8,8 +8,11 @@ showLoader(). Ця функція нічого не приймає, повинн
 hideLoader(). Ця функція нічого не приймає, повинна прибирати клас для відображення лоадера. Нічого не повертає. */
 /**Робота модального вікна пов'язана з самою галереєю, тому використання бібліотеки SimpleLightbox
  * і методу екземпляру refresh() буде доцільним у файлі render-functions.js. */
-/*export function createGallery(images) {
-  const gallery = document.querySelector('.gallery');
+
+
+const gallery = document.querySelector('.gallery');
+
+export function createGallery(images) {
   const markup = images
     .map(
       ({
@@ -20,32 +23,35 @@ hideLoader(). Ця функція нічого не приймає, повинн
         views,
         comments,
         downloads,
-      }) => {
-        return;
-        `
-          <li class="gallery-item">
-          <a href ="${largeImageURL}">
-  <img src="${webformatURL}" alt="${tags}" class="gallery-item" />
-          </a>
-        <div class="info">
+      }) => `
+    <li class="gallery-item">
+      <a href="${largeImageURL}">
+        <img src="${webformatURL}" alt="${tags}" />
+      </a>
+      <div class="info">
         <p><b>Likes:</b> ${likes}</p>
         <p><b>Views:</b> ${views}</p>
         <p><b>Comments:</b> ${comments}</p>
         <p><b>Downloads:</b> ${downloads}</p>
       </div>
-    </li>`;
-      }
+    </li>
+  `
     )
     .join('');
   gallery.innerHTML = markup;
+  /*lightbox.refresh(); // Оновлення SimpleLightbox після додавання нових зображень*/
 }
+
 export function clearGallery() {
-  document.querySelector('.gallery').innerHTML = '';
+  gallery.innerHTML = '';
 }
+
 export function showLoader() {
-  document.querySelector('.loader').style.display.remove('block');
+  /*console.log(' Лоадер Показано');*/
+  document.querySelector('.loader').classList.remove('hidden');
 }
+
 export function hideLoader() {
-  document.querySelector('.loader').style.display.add('none');
+  /*console.log(' Лоадер Приховано');*/
+  document.querySelector('.loader').classList.add('hidden');
 }
-*/
