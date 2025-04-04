@@ -1,89 +1,89 @@
-# 🎴Пошук зображень через Pixabay API
+# 🎴Image Search via Pixabay API
 
-Цей проект дозволяє користувачам шукати зображення за допомогою
-[Pixabay API.](https://pixabay.com/api/docs/). Результати відображатися як
-галерея з лайтбоксом і розширеними метаданими (уподобання, перегляди, коментарі,
-завантаження). Створено за допомогою JavaScript, Axios, iziToast, SimpleLightbox
-and Vite. Щоб дізнатися більше та налаштувати додаткові функції
-[див. документацію](https://vitejs.dev/).
+This project allows users to search for images using
+[Pixabay API.](https://pixabay.com/api/docs/). Results are displayed as a
+gallery with a lightbox and rich metadata (likes, views, comments, downloads).
+Built with JavaScript, Axios, iziToast, SimpleLightbox and Vite. To learn more
+and configure additional features [див. документацію](https://vitejs.dev/).
 
-## 🔷 🔧 Як це працює:
+## 🔷 🔧 How it works:
 
-      ✔ Користувач вводить запит у форму.
-      ✔ Відправка форми запускає асинхронний запит до API.
-      ✔ Якщо зображення знайдені — вони рендеряться у вигляді карток у галереї.
-      ✔ Якщо ні — показується попередження.
-      ✔ Натискання на зображення відкриває його у модальному вікні.
+      ✔ The user enters a query into a form.
+      ✔ Submitting the form triggers an asynchronous request to the API.
+      ✔ If images are found, they are rendered as cards in the gallery.
+      ✔ If not, a warning is displayed.
+      ✔ Clicking on an image opens it in a modal window.
 
-      📌 Функціонал
-      ✔ Пошук зображень за ключовим словом
-      ✔ Вивід картинок у вигляді галереї
-      ✔ Вікно перегляду (lightbox)
-      ✔ Повідомлення про помилки/попередження
-      ✔ Лоадер при завантаженні
+      📌 Functionality
+      ✔ Image search by keyword
+      ✔ Gallery view
+      ✔ Lightbox
+      ✔ Error/warning messages
+      ✔ Loader when loading
 
-## 🔧 Технології
+## 🔧 Technologies
 
-### ✅ JavaScript – основна мова розробки
+### ✅ JavaScript – main development language
 
-### ✅ HTML/CSS – структура та стилізація
+### ✅ HTML/CSS – structure and styling
 
-### ✅[Axios](https://axios-http.com/) – Для HTTP-запитів
+### ✅[Axios](https://axios-http.com/) – For HTTP-requests
 
-### ✅[iziToasts](https://github.com/marcelodolza/iziToast/) – виведення повідомлень
+### ✅[iziToasts](https://github.com/marcelodolza/iziToast/) – message output
 
 ### ✅[SimpleLightbox](https://github.com/andreknieriem/simplelightbox/) – image lightbox
 
-## 📂 Структура проєкту
+## 📂 Project structure
 
-       |──📁.github/workflows           # Файли для GitHub Actions
-       |──📁assets                      # Додаткові ресурси, такі як шрифти, іконки тощо
-       │───📁src                        # Папка проекту
-       |   │──📁css                     # Стилі проекту
-       |   │──📁img                     # Папка зображень
-       |   │──📁js                      # Папка логіки
-       |   |  |──📄 pixabay-api.js      # функції для HTTP-запитів.
-       |   |  |──📄 render-functions.js # функції для відображення елементів інтерфейсу
-       │   │──📄 main.js                # логікa роботи додатка
-       │   │──📄 index.html             # Главная страница веб-сайта
-       │──📄 .editorconfig              # Налаштування редактора
-       │──📄 .gitignore                 # Файл ігнорування для Git
-       │──📄 .prettierrc.json           # Конфігурація форматування коду
-       │──📄 README.md                  # Опис проєкту
-       │──📄 package-lock.json          # опис дерева залежності
-       │──📄 package.json               # Інформація про залежності
-       │──📄 vite.config.js             # Налаштування Vite
+       |──📁.github/workflows           # Files for GitHub Actions
+       |──📁assets                      # Additional resources such as fonts, icons, etc.
+       │───📁src                        # Project folder
+       |   │──📁css                     # Project styles
+       |   │──📁img                     # Image folder
+       |   │──📁js                      # Logic folder
+       |   |  |──📄 pixabay-api.js      # functions for HTTP requests
+       |   |  |──📄 render-functions.js # functions for displaying interface elements
+       │   │──📄 main.js                # application logic
+       │   │──📄 index.html             # Home page of the website
+       │──📄 .editorconfig              # Editor settings
+       │──📄 .gitignore                 # Git ignore file
+       │──📄 .prettierrc.json           # Code formatting configuration
+       │──📄 README.md                  # Project description
+       │──📄 package-lock.json          # dependency tree description
+       │──📄 package.json               # Dependency information
+       │──📄 vite.config.js             # Vite settings
 
-### 🔷 📁 Головна структура:
+### 🔷 📁 Main structure:
 
-#### 🔹main.js (основний файл):
+#### 🔹main.js (main file):
 
-##### — Імпортує потрібнібібліотеки та власні модулі.
+##### — Imports the necessary libraries and custom modules.
 
-##### — Обробляє подію відправлення форми. — Отримує зображення з API за допомогою fetchImages.
+##### — Handles the form submission event. — Gets images from the API using fetchImages.
 
-##### — Показує лоадер, обробляє помилки, рендерить галерею.
+##### — Shows the loader, handles errors, renders the gallery.
 
-#### 🔹render-functions.js (модуль візуалізації):
+#### 🔹render-functions.js (rendering module):
 
-##### — створює HTML-розмітку для галереїна основі отриманих зображень.
+##### — creates HTML markup for the gallery based on the received images.
 
-##### — очищає галерею перед новим запитом.
+##### — clears the gallery before a new request.
 
-##### — показуює або приховує індикатор завантаження.
+##### — shows or hides the loading indicator.
 
-#### 🔹pixabay-api.js (модуль API):
+#### 🔹pixabay-api.js (module API):
 
-##### — виконує HTTP-запит до API Pixabay із заданим пошуковим запитом.
+##### — performs an HTTP request to the Pixabay API with a given search query.
 
-### 🔷 📦 Сторонні бібліотеки:
+### 🔷 📦 Third-party libraries:
 
-#### 🔹axios — для HTTP-запитів.
+#### 🔹axios — for HTTP-requests.
 
-#### 🔹iziToast — для відображення сповіщень (успіх, помилки).
+#### 🔹iziToast — for displaying notifications (success, errors).
 
-#### 🔹simplelightbox для красивого перегляду зображень у модальному вікні.
+#### 🔹simplelightbox for beautiful image viewing in a modal window.
 
-👨‍💻 Автор: [Ded-goIT] 📅 Дата: [31.03.2025]
+👨‍💻 Author: [Ded-goIT] 📅 Date: [31.03.2025]
 
-✅ Проєкт створений для практики роботи з промісами та асинхронним JavaScript.
+✅ The project was created to practice working with promises and asynchronous
+JavaScript.
