@@ -13,7 +13,12 @@ import {
   showLoader,
   hideLoader,
 } from './js/render-functions';
-const lightbox = new SimpleLightbox('.gallery a');
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionSelector: 'img',
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+});
 const form = document.querySelector('.form');
 
 form.addEventListener('submit', async event => {
