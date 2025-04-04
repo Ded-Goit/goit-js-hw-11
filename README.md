@@ -4,7 +4,7 @@ This project allows users to search for images using
 [Pixabay API.](https://pixabay.com/api/docs/). Results are displayed as a
 gallery with a lightbox and rich metadata (likes, views, comments, downloads).
 Built with JavaScript, Axios, iziToast, SimpleLightbox and Vite. To learn more
-and configure additional features [див. документацію](https://vitejs.dev/).
+and configure additional features [see documentation](https://vitejs.dev/).
 
 ## 🔷 🔧 How it works:
 
